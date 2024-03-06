@@ -1,5 +1,5 @@
 import BlogCard from "@/components/BlogCard";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 async function getPosts() {
   const responce = await fetch("https://dummyjson.com/posts?limit=10");

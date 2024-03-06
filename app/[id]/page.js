@@ -1,8 +1,7 @@
 import { notFound } from "next/navigation";
 import React from "react";
 import Image from "next/image";
-
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 async function getPost(id) {
   try {

@@ -1,5 +1,5 @@
-import styles from "./styles.module.css";
-import "../styles/global.css";
+import styles from "./styles.module.scss";
+import "../styles/global.scss";
 import { Inter } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
