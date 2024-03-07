@@ -9,7 +9,7 @@ export async function Header() {
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo}>
-        <span>Useless facts</span>
+        <span>Useless Facts</span>
       </Link>
       <nav>
         <Link href="https://github.com/ebrubastug" target="_blank">
