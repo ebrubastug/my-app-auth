@@ -1,21 +1,18 @@
 import BlogCard from "@/components/BlogCard";
 import styles from "./styles.module.scss";
+import Httper from "../service/Api";
 
-async function getPosts() {
-  const responce = await fetch("https://dummyjson.com/posts?limit=10");
-  return responce.json();
-}
+const randomUrl =
+  "https://uselessfacts.jsph.pl/api/v2/facts/random?language=en";
+
+var response = await Httper("get", randomUrl);
 
 export default async function Home() {
-  const { posts } = await getPosts();
-
-  console.log(posts);
+  console.log(response.text);
 
   return (
     <div className={styles.blogsContainer}>
-      {posts.map((post) => (
-        <BlogCard key={post.id} {...post} />
-      ))}
+      <BlogCard key={response.id} text={response.text} />
     </div>
   );
 }

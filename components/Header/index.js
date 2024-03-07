@@ -6,11 +6,14 @@ function Header() {
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo}>
-        <span>Blog</span>
+        <span>Useless facts</span>
       </Link>
       <nav>
         <Link href="https://github.com/ebrubastug" target="_blank">
-          <span>About</span>
+          <span className={styles.headerBtn}> About</span>
+        </Link>
+        <Link href="/Login"  >
+          <span className={styles.headerBtn}>Login</span>
         </Link>
       </nav>
     </header>

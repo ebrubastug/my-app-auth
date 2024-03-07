@@ -14,7 +14,8 @@
 
 .card img {
   border-radius: 8px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .cardBody {
@@ -56,4 +57,4 @@
   border-radius: 12px;
   margin-right: 7px;
   cursor: pointer;
-}
+}/*# sourceMappingURL=styles.module.css.map */

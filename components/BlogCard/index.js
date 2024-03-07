@@ -5,19 +5,28 @@ import styles from "./styles.module.scss";
 
 function BlogCard(props) {
   return (
-    <Link href={`/${props.id}`} className={styles.card}>
-      <div className={styles.cardImage}>
-        <Image
-          src={`https://picsum.photos/id/${props.userId}/200/300`}
-          alt="Blog Card Image"
-          fill
-        />
+    <>
+      <div class="container">
+        <Link href={`/${props.id}`} className={styles.card}>
+          <div className={styles.cardBody}>
+            <h3>{props.text}</h3>
+          </div>
+        </Link>
+        <div className={styles.btnContainer}>
+          <select aria-label="Default select example" className={styles.btn}>
+            <option value="1">En</option>
+            <option value="2">De</option>
+            <option value="3">Tr</option>
+          </select>
+          <button type="button" className={styles.btn}>
+            Today
+          </button>
+          <button type="button" className={styles.btn}>
+            Random
+          </button>
+        </div>
       </div>
-      <div className={styles.cardBody}>
-        <h3>{props.title}</h3>
-        <p> {props.body}</p>
-      </div>
-    </Link>
+    </>
   );
 }
 
