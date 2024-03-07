@@ -1,8 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import styles from "./styles.module.scss";
+import { useAuth } from "@/hooks/useAuth";
 
-function Header() {
+export async function Header() {
+  const auth = await useAuth.fromServer();
+
   return (
     <header className={styles.header}>
       <Link href="/" className={styles.logo}>
@@ -12,9 +15,15 @@ function Header() {
         <Link href="https://github.com/ebrubastug" target="_blank">
           <span className={styles.headerBtn}> About</span>
         </Link>
-        <Link href="/Login"  >
-          <span className={styles.headerBtn}>Login</span>
-        </Link>
+        {auth ? (
+          <Link href="/panel">
+            <span className={styles.headerBtn}>Panel</span>
+          </Link>
+        ) : (
+          <Link href="/login">
+            <span className={styles.headerBtn}>Login</span>
+          </Link>
+        )}
       </nav>
     </header>
   );
