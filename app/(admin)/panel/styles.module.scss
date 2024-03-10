@@ -1,12 +1,49 @@
-.table {
-  width: 100%;
-  background-color: aqua;
+.titleBox {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.saveTd {
-  width: 80%;
+.titleButton {
+  background-color: #e7e7e7;
+  color: black !important;
+  border: none;
+  color: white;
+  padding: 15px 22px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  margin-right: 7px;
+  cursor: pointer;
 }
 
-.deleteTd {
-  width: 20%;
+.saveBox {
+  display: flex;
+  padding-bottom: 25px;
+  justify-content: space-between;
+}
+
+.text {
+  color: white;
+  padding-right: 10px;
+}
+
+.button {
+  background-color: #e7e7e7;
+  color: black !important;
+  border: none;
+  color: white;
+  padding: 15px 22px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 12px;
+  margin-right: 7px;
+  cursor: pointer;
 }

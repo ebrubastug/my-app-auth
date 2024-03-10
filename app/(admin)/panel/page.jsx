@@ -1,5 +1,8 @@
 "use client";
 import * as React from "react";
+import styles from "./styles.module.scss";
+import { RiDeleteBinLine } from "react-icons/ri";
+import { MdOutlineDeleteSweep } from "react-icons/md";
 
 export default function PanelPage() {
   const [list, setList] = React.useState([]);
@@ -18,13 +21,19 @@ export default function PanelPage() {
     localStorage.setItem("myList", JSON.stringify(newList));
   };
 
+  const clearList = () => {
+    localStorage.clear();
+    return list;
+  };
+
   return (
     <>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"
-      ></script>
+      <div className={styles.titleBox}>
+        <h1>Save Panel</h1>
+        <button className={styles.titleButton} onClick={() => clearList()}>
+          <MdOutlineDeleteSweep />
+        </button>
+      </div>
       <div>
         {list?.map((item) => {
           {
@@ -32,10 +41,15 @@ export default function PanelPage() {
               if (item?.response?.text) {
                 return (
                   <>
-                    <button onClick={() => removeItem(item?.response?.id)}>
-                      Delete
-                    </button>
-                    <p>{item?.response?.text}</p>
+                    <div className={styles.saveBox}>
+                      <div className={styles.text}>{item?.response?.text}</div>
+                      <button
+                        className={styles.button}
+                        onClick={() => removeItem(item?.response?.id)}
+                      >
+                        <RiDeleteBinLine />
+                      </button>
+                    </div>
                   </>
                 );
               }

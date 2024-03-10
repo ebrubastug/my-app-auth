@@ -3,7 +3,7 @@
 import * as React from "react";
 import styles from "./styles.module.scss";
 import Httper from "../../service/Api";
-import { FcBookmark } from "react-icons/fc";
+import { CiBookmarkPlus } from "react-icons/ci";
 
 
 function BlogCard() {
@@ -18,7 +18,7 @@ function BlogCard() {
   React.useEffect(() => {
     checkList();
     request(todayUrl);
-  },[countryParam]);
+  }, [countryParam]);
 
   const request = async (urlType) => {
     return setResponse(await Httper("get", urlType));
@@ -29,16 +29,16 @@ function BlogCard() {
   };
 
   const checkList = async (response) => {
-    if(localStorage?.getItem("myList")?.length > 2){
-     return setMyList(JSON.parse(await localStorage?.getItem("myList")));
+    if (localStorage?.getItem("myList")?.length > 2) {
+      return setMyList(JSON.parse(await localStorage?.getItem("myList")));
     }
   };
 
-  const addList = async  (response) => {
-    setMyList([...myList, { response }]); 
-    localStorage?.setItem("myList", JSON.stringify(myList))
-  }
-  
+  const addList = async (response) => {
+    setMyList([...myList, { response }]);
+    localStorage?.setItem("myList", JSON.stringify(myList));
+  };
+
   console.log(myList);
 
   return (
@@ -78,7 +78,7 @@ function BlogCard() {
             className={styles.save}
             onClick={() => addList(response)}
           >
-            <FcBookmark size={60} />
+            <CiBookmarkPlus size={60} />
           </button>
         </div>
       </div>
