@@ -20,7 +20,7 @@ export async function Header() {
             <span className={styles.headerBtn}>Panel</span>
           </Link>
         ) : (
-          <Link href="/login">
+          <Link href="/Login">
             <span className={styles.headerBtn}>Login</span>
           </Link>
         )}
