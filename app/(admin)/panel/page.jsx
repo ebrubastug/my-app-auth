@@ -8,7 +8,6 @@ export default function PanelPage() {
   const [list, setList] = React.useState([]);
 
   React.useEffect(() => {
-    console.log("girdi");
     setList(JSON.parse(localStorage.getItem("myList")));
   }, []);
 
@@ -23,6 +22,7 @@ export default function PanelPage() {
 
   const clearList = () => {
     localStorage.clear();
+    setList([]);
     return list;
   };
 
@@ -31,10 +31,11 @@ export default function PanelPage() {
       <div className={styles.titleBox}>
         <h1>Save Panel</h1>
         <button className={styles.titleButton} onClick={() => clearList()}>
-          <MdOutlineDeleteSweep />
+          <MdOutlineDeleteSweep size={20} />
         </button>
       </div>
-      <div>
+      <hr />
+      <div style={{marginTop:25}}>
         {list?.map((item) => {
           {
             {

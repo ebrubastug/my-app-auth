@@ -39,8 +39,6 @@ function BlogCard() {
     localStorage?.setItem("myList", JSON.stringify(myList));
   };
 
-  console.log(myList);
-
   return (
     <>
       <div className="container">
