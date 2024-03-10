@@ -28,7 +28,7 @@ export async function middleware(request) {
     searchParams.set("next", nextUrl.pathname);
 
     const response = NextResponse.redirect(
-      new URL(`/login?${searchParams}`, url)
+      new URL(`/Login?${searchParams}`, url)
     );
     response.cookies.delete("token");
 
@@ -38,4 +38,4 @@ export async function middleware(request) {
   return NextResponse.next();
 }
 
-export const config = { matcher: ["/login", "/panel/:path*"] };
+export const config = { matcher: ["/Login", "/panel/:path*"] };
