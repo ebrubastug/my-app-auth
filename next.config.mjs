@@ -11,6 +11,9 @@ const nextConfig = {
       },
     ],
   },
+  env: {
+    NEXT_PUBLIC_JWT_SECRET_KEY: "SASJDJFJJ@12KKWDJJDFVFJMr34",
+  },
 };
 
 export default nextConfig;
